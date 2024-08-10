@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="home-page">
       <h1>Shop System - CA298 Exam</h1>
-      <h2><i>Created by Jake Farrell - 22349856</i></h2>
+      <h2><i>Created by Jake Farrell</i></h2>
         <Link to="/categories" className="btn btn-primary create-button">View All Categories</Link>
         <Link to="/customers" className="btn btn-primary create-button">View All Customers</Link>
         <Link to="/products" className="btn btn-primary create-button">View All Products</Link>
