@@ -1,0 +1,33 @@
+# Node modules should not be copied
+node_modules
+
+# Build artifacts
+build
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Git files
+.git
+.gitignore
+
+# Docker files
+Dockerfile
+.dockerignore
+
+# Temporary files
+tmp/
+*.tmp
+
+# npm cache
+npm-cache/
+
+# Yarn cache
+yarn-cache/
+
+# Other
+old/

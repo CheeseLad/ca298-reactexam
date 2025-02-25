@@ -6,7 +6,7 @@ function ViewAllProductsCategory() {
   const { productcategory } = useParams();
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/product/?category=${productcategory}`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/product/?category=${productcategory}`)
       .then((response) => response.json())
       .then((data) => setData(data));
   }, [productcategory]);

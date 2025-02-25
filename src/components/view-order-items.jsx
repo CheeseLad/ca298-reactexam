@@ -6,7 +6,7 @@ function ViewOrderItems() {
   const { orderitems } = useParams();
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/orderitem/?order=${orderitems}`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/orderitem/?order=${orderitems}`)
       .then((response) => response.json())
       .then((data) => setData(data));
   }, [orderitems]);

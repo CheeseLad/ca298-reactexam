@@ -11,23 +11,23 @@ function AllOrderInfo() {
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/order/${order}/`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/order/${order}/`)
       .then((response) => response.json())
       .then((data) => setData(data));
   }, [order]);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/orderitem/?order=${order}`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/orderitem/?order=${order}`)
       .then((response) => response.json())
       .then((data2) => setData2(data2));
   }, [order]);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/order/${order}`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/order/${order}`)
       .then(response => response.json())
       .then(orderData => {
         setOrder2(orderData);
-        fetch(`http://127.0.0.1:8000/api/orderitem/?order=${order}`)
+        fetch(`${process.env.REACT_APP_API_URL}/api/orderitem/?order=${order}`)
           .then(response => response.json())
           .then(orderItems => {
             setProducts(orderItems);

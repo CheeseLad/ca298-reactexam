@@ -5,7 +5,7 @@ function ViewSingleProductParam( { product }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/product/${product}/`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/product/${product}/`)
       .then((response) => response.json())
       .then((data) => setData(data));
   }, [product]);

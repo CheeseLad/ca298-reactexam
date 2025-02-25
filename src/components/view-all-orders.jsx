@@ -5,7 +5,7 @@ function ViewAllOrders() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/order/")
+    fetch(`${process.env.REACT_APP_API_URL}/api/order/`)
       .then((response) => response.json())
       .then((data) => setData(data));
   }, []);
