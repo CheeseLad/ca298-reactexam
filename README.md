@@ -1,3 +1,12 @@
+# ca298-reactexam
+CA298 Full Stack Development React Exam: React Frontend Shop System: Grade 100% 
+
+- Check out the frontend here! https://reactexam.jakefarrell.ie
+- Check out the backend here! https://reactexam-api.jakefarrell.ie
+
+*Note: Backend obtained from [here](https://gitlab.computing.dcu.ie/mscriney1/ca298restapiexam)*
+
+---
 
 # Ca298 Test app
 

@@ -7,7 +7,7 @@ function ViewSingleCustomer() {
   const { customer } = useParams();
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/customer/${customer}/`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/customer/${customer}/`)
       .then((response) => response.json())
       .then((data) => setData(data));
   }, [customer]);
