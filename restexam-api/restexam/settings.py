@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-m)^8v+2960=ufpthu16q1iv=*u(j4-7zma%t@&ya#w923!ahb2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -78,7 +78,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000", # node on port 3000
     "http://127.0.0.1:3000",  # node on port 3000
     "http://localhost:5000", # node on port 3000
-    "http://127.0.0.1:5000"  # node on port 3000
+    "http://127.0.0.1:5000",  # node on port 3000
+    "https://reactexam.jakefarrell.ie", # CheeseLad - for deployment
 ]
 
 WSGI_APPLICATION = 'restexam.wsgi.application'
