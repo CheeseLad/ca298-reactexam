@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
+import ViewAllOrdersCustomer from "./view-all-orders-customer";
 
 function ViewSingleCustomer() {
   const [data, setData] = useState([]);
@@ -13,6 +14,7 @@ function ViewSingleCustomer() {
 
   const displayCustomer = () => {
     return (
+      <div>
       <div className="container custom-box single-box">
         <h1>Customer Information</h1>
         <div className="row">
@@ -28,6 +30,8 @@ function ViewSingleCustomer() {
             </div>
           </div>
         </div>
+      </div>
+      <ViewAllOrdersCustomer customer={customer} name={data.name} />
       </div>
     )};
 

@@ -1,19 +1,26 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-function ViewAllOrders() {
+function ViewAllOrdersStatus() {
   const [data, setData] = useState([]);
+  const { status } = useParams();
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/order/")
+    fetch(`http://127.0.0.1:8000/api/order?status=${status}`)
       .then((response) => response.json())
       .then((data) => setData(data));
   }, []);
 
+  const getIDFromUrl = (id) => {
+    if (!id) return "";
+    const segments = id.split("/");
+    return segments[segments.length - 2];
+  };
+
   const displayAllOrders = () => {
     return (
       <div className="container custom-box">
-        <h1>All Orders</h1>
+        <h1>All Orders For Status: {status}</h1>
         <div className="row">
           {data.map((order, index) => (
             <div className="col-lg-4 mb-4" key={index}>
@@ -26,8 +33,8 @@ function ViewAllOrders() {
                     <li className="list-group-item"><strong>Status: </strong>{order.status}</li>
                   </ul>
                   <div className="button-container">
-                    <Link to={`/customer/${order.customer.split('/').filter(part => !!part).pop()}`} className="btn btn-primary mr-2">View Customer Information</Link>
-                    <Link to={`/orderinfo/${order.url.split('/').filter(part => !!part).pop()}`} className="btn btn-primary mr-2">View Order Information</Link>
+                    <Link to={`/customer/${getIDFromUrl(order.customer)}`} className="btn btn-primary mr-2">View Customer Information</Link>
+                    <Link to={`/orderinfo/${getIDFromUrl(order.url)}`} className="btn btn-primary mr-2">View Order Information</Link>
                   </div>
                 </div>
               </div>
@@ -41,4 +48,4 @@ function ViewAllOrders() {
   return displayAllOrders();
 }
 
-export default ViewAllOrders;
+export default ViewAllOrdersStatus;

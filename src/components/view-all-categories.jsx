@@ -24,7 +24,6 @@ function ViewAllCategories() {
                     <li className="list-group-item"><strong>Shortcode: </strong>{category.shortcode}</li>
                   </ul>
                   <div className="button-container">
-                    <Link to={`/category/${category.shortcode}`} className="btn btn-primary mr-2">View Category Information</Link>
                     <Link to={`/productcategory/${category.shortcode}`} className="btn btn-primary mr-2">View Products In Category</Link>
                   </div>
                 </div>

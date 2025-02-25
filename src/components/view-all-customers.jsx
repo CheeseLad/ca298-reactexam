@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function ViewAllCustomers() {
+function ViewAllCustomers()  {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function ViewAllCustomers() {
                     <li className="list-group-item"><strong>Address: </strong>{customer.address}</li>
                   </ul>
                   <div className="button-container">
-                    <Link to={`/customer/${customer.url.split('/').filter(part => !!part).pop()}`} className="btn btn-primary mr-2">View Customer Information</Link>
+                    <Link to={`/customer/${customer.url.split('/').filter(part => !!part).pop()}`} className="btn btn-primary mr-2">View Customer Information & Placed Orders</Link>
                   </div>
                 </div>
               </div>
